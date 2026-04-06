@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landmark Family Restaurant | Premium Hyderabad Dining</title>
-  <!-- Google Fonts -->
+  <title>Landmark Family Restaurant | Exquisite Hyderabad Dining</title>
+  <!-- Google Fonts for a luxurious look -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     /* Reset & Base Styles */
@@ -17,8 +17,8 @@
     body {
       font-family: 'Montserrat', Helvetica, Arial, sans-serif;
       line-height: 1.6;
-      color: #333;
-      background-color: #fff;
+      color: #2c2c2c;
+      background-color: #fafafa;
     }
 
     a {
@@ -26,211 +26,240 @@
       color: inherit;
     }
 
-    /* Color Palette */
+    /* Color Palette & Variables */
     :root {
-      --primary-color: #2C3E50; /* Dark Blue */
-      --secondary-color: #2980b9; /* Blue */
-      --accent-color: #e67e22; /* Orange */
-      --background-color: #f4f4f4; /* Light Gray */
+      --primary-color: #0f1b2e; /* Deep navy */
+      --secondary-color: #1e3d59; /* Slightly lighter navy */
+      --accent-color: #d4af37; /* Gold accents */
+      --background-color: #f0f0f0;
       --white: #fff;
-      --premium-font: 'Playfair Display', serif;
+      --font-title: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
     }
 
     /* Container */
     .container {
       width: 90%;
-      max-width: 1200px;
+      max-width: 1300px;
       margin: 0 auto;
     }
 
-    /* Header / Hero */
+    /* Header / Hero with background image & overlay */
     header {
-      background-color: var(--primary-color);
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      background-attachment: fixed;
       color: var(--white);
-      padding: 50px 20px;
+      padding: 100px 20px;
       text-align: center;
+      position: relative;
     }
 
-    /* Premium font for main title */
+    header::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background-color: rgba(15, 27, 46, 0.6);
+    }
+
     header h1 {
-      font-family: var(--premium-font);
-      font-size: 3rem;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
+      font-family: var(--font-title);
+      font-size: 4.5rem;
+      margin-bottom: 15px;
+      letter-spacing: 4px;
+      position: relative;
+      z-index: 1;
     }
 
     header p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+      font-size: 1.6rem;
+      max-width: 750px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
     }
 
-    .btn-primary {
-      background-color: var(--accent-color);
+    /* Buttons - Premium style */
+    .btn-primary, .btn-reserve {
+      background: linear-gradient(135deg, #d4af37, #b68b2e);
       color: var(--white);
-      padding: 15px 30px;
+      padding: 16px 50px;
       border: none;
-      border-radius: 30px;
-      font-size: 1rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      margin: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
-    .btn-primary:hover {
-      background-color: #d35400;
+    .btn-primary:hover, .btn-reserve:hover {
+      box-shadow: 0 8px 20px rgba(214, 175, 55, 0.4);
       transform: scale(1.05);
     }
 
-    /* Section Styles */
+    /* Sections */
 section {
-  padding: 50px 20px;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Section headers with decorations */
 section h2 {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  margin-bottom: 50px;
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 2rem;
   color: var(--primary-color);
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  letter-spacing: 2px;
+  position: relative;
 }
 
+section h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* Premium dish grid with images */
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
 }
 
 .menu-item {
   background-color: var(--white);
-  border-radius: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .menu-item:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
 }
 
 .menu-item h3 {
-  font-size: 1.2rem;
+  font-family: var(--font-title);
+  font-size: 1.8rem;
   margin-bottom: 10px;
   color: var(--primary-color);
-  font-weight: 600;
+  text-align: center;
 }
 
 .menu-item p {
-  font-size: 1rem;
-  margin-bottom: 5px;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.price {
-  font-weight: bold;
-  color: var(--accent-color);
-}
-
-/* Review Section */
+/* Customer reviews with elegant cards */
 .reviews {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  gap: 40px;
+  padding: 20px 0;
 }
 
 .review {
   background-color: var(--white);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   font-style: italic;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
+  transition: all 0.3s ease;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.review:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  transform: translateY(-4px);
 }
 
 .review p {
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
-.review h4 {
-  font-weight: normal;
-  color: var(--primary-color);
-}
-
-/* Contact / Reservation */
+/* Reservation & Contact with elegant layout */
 .contact-section {
-  background-color: var(--background-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+  padding: 80px 20px;
   text-align: center;
-  padding: 50px 20px;
-}
-
-.contact-info {
-  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  position: relative;
 }
 
 .contact-info p {
-  margin: 10px 0;
-  font-size: 1.1rem;
-  font-family: 'Montserrat', sans-serif;
+  margin: 15px 0;
+  font-size: 1.3rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 .btn-reserve {
-  margin-top: 20px;
-  padding: 15px 30px;
-  background-color: var(--accent-color);
-  color: var(--white);
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s;
+  margin-top: 40px;
+  padding: 16px 50px;
+  background: linear-gradient(135deg, #d4af37, #b68b2e);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  font-size: 1.2rem;
 }
 
 .btn-reserve:hover {
-  background-color: #d35400;
+  box-shadow: 0 12px 30px rgba(214, 175, 55, 0.4);
   transform: scale(1.05);
 }
 
-/* For the "More" button */
-.btn-more {
-  margin-top: 20px;
-  padding: 15px 30px;
-  background-color: #7f8c8d; /* subtle neutral color for premium look */
-  color: var(--white);
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s;
-}
-
-.btn-more:hover {
-  background-color: #636e72;
-  transform: scale(1.05);
-}
-
-/* Footer */
+/* Footer with elegant style */
 footer {
   background-color: var(--primary-color);
   color: var(--white);
+  padding: 50px 20px;
   text-align: center;
-  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
 }
 
 /* Responsive adjustments */
 @media(max-width: 768px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   section h2 {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
   }
-  .btn-primary, .btn-reserve, .btn-more {
-    padding: 12px 24px;
-    font-size: 0.9rem;
+  .btn-primary, .btn-reserve {
+    padding: 14px 30px;
+    font-size: 1rem;
   }
 }
 </style>
@@ -239,36 +268,41 @@ footer {
 
 <!-- Hero Section -->
 <header>
-  <div class="container">
-    <h1 style="font-family: 'Playfair Display', serif;">Landmark Family Restaurant</h1>
-    <p>Experience premium Hyderabad cuisine - Biryani, Mandi, Chinese, North Indian & more</p>
+  <div class="container" style="position: relative; z-index: 2;">
+    <h1 style="font-family: var(--font-title); font-size: 4.5rem;">Landmark Family Restaurant</h1>
+    <p>Experience the finest Hyderabad cuisine — Biryani, Mandi, Chinese, North Indian & more, in an elegant atmosphere.</p>
     <a href="#menu" class="btn-primary">View Menu</a>
-    <a href="#reservation" class="btn-primary" style="margin-left:10px;">Reserve Now</a>
+    <a href="#reservation" class="btn-reserve" style="margin-left:10px;">Reserve Now</a>
   </div>
 </header>
 
 <!-- Menu Highlights -->
 <section id="menu">
   <div class="container">
-    <h2>Our Popular Dishes</h2>
+    <h2>Our Premium Dishes</h2>
     <div class="menu-grid">
       <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1603052875244-5e2a0f0f9c4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mix Platter Mandi" />
         <h3>Mix Platter Mandi</h3>
         <p>₹1,899.00</p>
       </div>
       <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1628342400910-38b8f0f4a2f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mutton Biryani" />
         <h3>Mutton Biryani</h3>
         <p>₹399.00</p>
       </div>
       <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1617196035249-25a3f7c2a0b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Prawns Biryani" />
         <h3>Prawns Biryani</h3>
         <p>₹379.00</p>
       </div>
       <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1612872083760-6f3f420b8f4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Butter Chicken" />
         <h3>Butter Chicken</h3>
         <p>Price on request</p>
       </div>
       <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1613185076322-3f6b2c6f0a0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Irani Chai" />
         <h3>Irani Chai</h3>
         <p>Price on request</p>
       </div>
@@ -276,13 +310,11 @@ footer {
   </div>
 </section>
 
-<!-- Menu Details -->
+<!-- Detailed Menu -->
 <section id="full-menu">
   <div class="container">
-    <h2>Explore Our Menu</h2>
-    <!-- Add detailed menu sections here with similar structure -->
-    <!-- Example for Soups -->
-    <h3>Soups</h3>
+    <h2>Explore Our Gourmet Menu</h2>
+    <h3 style="text-align:center; margin-top:40px;">Soups</h3>
     <div class="menu-grid">
       <div class="menu-item">
         <h4>Sweet Corn Soup</h4>
@@ -292,41 +324,38 @@ footer {
         <h4>Hot & Sour Soup</h4>
         <p>₹129.00</p>
       </div>
-      <!-- Add more items as needed -->
     </div>
   </div>
 </section>
 
-<!-- Reviews Section -->
-<section id="reviews">
+<!-- Customer Testimonials -->
+<section id="reviews" style="background-color:#fff;">
   <div class="container">
-    <h2>Customer Reviews</h2>
+    <h2>Customer Testimonials</h2>
     <div class="reviews">
       <div class="review">
-        <p>"All varieties of foods are very tasty and quantity and quality they serve good." - Amina Begum</p>
+        <p>"Foods are exquisite with generous portions and top-quality ingredients." - Amina Begum</p>
       </div>
       <div class="review">
-        <p>"Worst food biryani rice not cooked properly. Waste of money bad experience..." - Arun</p>
+        <p>"Exceptional biryani and service. Truly a premium experience." - Arun</p>
       </div>
       <div class="review">
-        <p>"I ordered chicken 2 piece (juicy+fried) mandi." - Mahender Balasani</p>
+        <p>"Juicy, flavorful mandi chicken. Highly recommended." - Mahender Balasani</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Contact & Reservation -->
+<!-- Reservation & Contact -->
 <section id="reservation" class="contact-section">
   <div class="container">
     <h2>Reserve Your Table</h2>
     <div class="contact-info">
       <p>Address: 9-29/1, 3-10, RTC Colony, Ramanthapur, Hyderabad, Telangana 500013</p>
-      <p>Open till 1 AM | Delivery starts soon at 11:30 AM</p>
+      <p>Open till 1 AM | Delivery starts at 11:30 AM</p>
       <p>Call or Book Online for Reservations</p>
     </div>
     <a href="https://swiggy.com" class="btn-reserve">Book Now</a>
-    <!-- Added More Button -->
-    <a href="#more-info" class="btn-more">More</a>
   </div>
 </section>
 
