@@ -13,9 +13,10 @@
 
     header {
       text-align: center;
-      padding: 15px;
-      font-size: 26px;
+      padding: 20px;
+      font-size: 32px;
       font-weight: bold;
+      background: rgba(0,0,0,0.3);
     }
 
     .section {
@@ -23,8 +24,8 @@
     }
 
     .title {
-      font-size: 22px;
-      margin-bottom: 10px;
+      font-size: 24px;
+      margin-bottom: 15px;
       border-left: 5px solid #ff4d4d;
       padding-left: 10px;
     }
@@ -37,23 +38,38 @@
 
     .card {
       background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
       border-radius: 15px;
       padding: 15px;
       text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      transform: scale(1.06);
     }
 
     img {
       width: 100%;
-      border-radius: 10px;
-      height: 160px;
+      height: 150px;
       object-fit: cover;
+      border-radius: 10px;
+    }
+
+    h3 {
+      margin: 10px 0 5px;
+    }
+
+    .desc {
+      font-size: 13px;
+      opacity: 0.8;
     }
 
     .price {
-      margin: 5px 0;
-      color: #ffcc00;
+      margin: 10px 0;
       font-weight: bold;
+      color: #ffd369;
     }
 
     .btn {
@@ -63,6 +79,11 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background: #1ebc59;
     }
   </style>
 </head>
@@ -77,24 +98,27 @@
   <div class="container">
 
     <div class="card">
-      <img src="https://source.unsplash.com/400x300/?chicken-biryani">
+      <img src="https://i.imgur.com/4ZQZ4Zx.jpg">
       <h3>Chicken Biryani</h3>
+      <p class="desc">Hyderabadi style spicy & flavorful</p>
       <p class="price">₹309</p>
-      <a class="btn" href="#">Order</a>
+      <a class="btn" href="#">Order Now</a>
     </div>
 
     <div class="card">
-      <img src="https://source.unsplash.com/400x300/?mutton-biryani">
+      <img src="https://i.imgur.com/1z6Z5Kx.jpg">
       <h3>Mutton Biryani</h3>
+      <p class="desc">Rich taste with tender meat</p>
       <p class="price">₹349</p>
-      <a class="btn" href="#">Order</a>
+      <a class="btn" href="#">Order Now</a>
     </div>
 
     <div class="card">
-      <img src="https://source.unsplash.com/400x300/?prawns-biryani">
+      <img src="https://i.imgur.com/8uQZ7rX.jpg">
       <h3>Prawns Biryani</h3>
+      <p class="desc">Seafood lovers special</p>
       <p class="price">₹379</p>
-      <a class="btn" href="#">Order</a>
+      <a class="btn" href="#">Order Now</a>
     </div>
 
   </div>
@@ -106,17 +130,19 @@
   <div class="container">
 
     <div class="card">
-      <img src="https://source.unsplash.com/400x300/?chicken-mandi">
+      <img src="https://i.imgur.com/3fJ1P48.jpg">
       <h3>Chicken Mandi</h3>
+      <p class="desc">Juicy chicken with mandi rice</p>
       <p class="price">₹269</p>
-      <a class="btn" href="#">Order</a>
+      <a class="btn" href="#">Order Now</a>
     </div>
 
     <div class="card">
-      <img src="https://source.unsplash.com/400x300/?mutton-mandi">
+      <img src="https://i.imgur.com/Up8bKXG.jpg">
       <h3>Mutton Mandi</h3>
+      <p class="desc">Authentic Arabian style</p>
       <p class="price">₹289</p>
-      <a class="btn" href="#">Order</a>
+      <a class="btn" href="#">Order Now</a>
     </div>
 
   </div>
@@ -128,24 +154,27 @@
   <div class="container">
 
     <div class="card">
-      <img src="https://source.unsplash.com/400x300/?chicken-65">
+      <img src="https://i.imgur.com/7bKQ0Ff.jpg">
       <h3>Chicken 65</h3>
+      <p class="desc">Crispy & spicy fried chicken</p>
       <p class="price">₹298</p>
-      <a class="btn" href="#">Order</a>
+      <a class="btn" href="#">Order Now</a>
     </div>
 
     <div class="card">
-      <img src="https://source.unsplash.com/400x300/?butter-chicken">
+      <img src="https://i.imgur.com/YkK0n0W.jpg">
       <h3>Butter Chicken</h3>
+      <p class="desc">Creamy & rich gravy</p>
       <p class="price">₹249</p>
-      <a class="btn" href="#">Order</a>
+      <a class="btn" href="#">Order Now</a>
     </div>
 
     <div class="card">
-      <img src="https://source.unsplash.com/400x300/?paneer-manchurian">
+      <img src="https://i.imgur.com/JhYpK5T.jpg">
       <h3>Paneer Manchurian</h3>
+      <p class="desc">Indo-Chinese spicy paneer</p>
       <p class="price">₹233</p>
-      <a class="btn" href="#">Order</a>
+      <a class="btn" href="#">Order Now</a>
     </div>
 
   </div>
