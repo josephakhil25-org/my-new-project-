@@ -1,102 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landmark Family Restaurant</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landmark Family Restaurant | Premium Hyderabad Dining</title>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif;}
-    body{line-height:1.6;color:#333;}
-    header{background:#ff4d4d;color:white;padding:20px 0;text-align:center;}
-    header h1{font-size:2.5rem;}
-    nav{margin-top:10px;}
-    nav a{color:white;text-decoration:none;margin:0 15px;font-weight:700;}
-    nav a:hover{text-decoration:underline;}
-    section{padding:50px 20px;max-width:1000px;margin:auto;}
-    .menu-item{display:flex;flex-wrap:wrap;margin-bottom:30px;}
-    .menu-item img{width:300px;height:200px;object-fit:cover;border-radius:10px;margin-right:20px;}
-    .menu-item div{flex:1;}
-    .btn{display:inline-block;padding:10px 20px;background:#ff4d4d;color:white;border:none;border-radius:5px;text-decoration:none;font-weight:bold;margin-top:10px;}
-    .btn:hover{background:#e60000;}
-    footer{background:#333;color:white;text-align:center;padding:20px;margin-top:50px;}
-    @media(max-width:768px){
-      .menu-item{flex-direction:column;}
-      .menu-item img{margin:0 0 20px 0;width:100%;height:auto;}
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-  </style>
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Color Palette */
+    :root {
+      --primary-color: #2C3E50; /* Dark Blue */
+      --secondary-color: #2980b9; /* Blue */
+      --accent-color: #e67e22; /* Orange */
+      --background-color: #f4f4f4; /* Light Gray */
+      --white: #fff;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header / Hero */
+    header {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-color);
+      color: var(--white);
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #d35400;
+    }
+
+    /* Section Styles */
+section {
+  padding: 40px 20px;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.menu-item {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.menu-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.menu-item p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/* Review Section */
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.review {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.review p {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.review h4 {
+  font-weight: normal;
+  color: var(--primary-color);
+}
+
+/* Contact / Reservation */
+.contact-section {
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.btn-reserve {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: var(--accent-color);
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-reserve:hover {
+  background-color: #d35400;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media(max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  section h2 {
+    font-size: 1.5rem;
+  }
+  .btn-primary, .btn-reserve {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}
+</style>
 </head>
 <body>
 
-<!-- Header -->
+<!-- Hero Section -->
 <header>
-  <h1>Landmark Family Restaurant</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#menu">Menu</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="container">
+    <h1>Landmark Family Restaurant</h1>
+    <p>Experience premium Hyderabad cuisine - Biryani, Mandi, Chinese, North Indian & more</p>
+    <a href="#menu" class="btn-primary">View Menu</a>
+    <a href="#reservation" class="btn-primary" style="margin-left:10px;">Reserve Now</a>
+  </div>
 </header>
 
-<!-- Home Section -->
-<section id="home">
-  <h2>Welcome to Landmark Family Restaurant 🍽️</h2>
-  <p>Delicious meals and biryani served with love. Enjoy a family dining experience like no other!</p>
-  <a class="btn" href="https://wa.me/YOURNUMBER" target="_blank">Order Now</a>
-</section>
-
-<!-- Menu Section -->
+<!-- Menu Highlights -->
 <section id="menu">
-  <h2>Our Menu</h2>
-
-  <div class="menu-item">
-    <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg" alt="Chicken Biryani">
-    <div>
-      <h3>Chicken Biryani</h3>
-      <p>Spicy and flavorful chicken biryani cooked with premium basmati rice.</p>
-      <a class="btn" href="https://wa.me/YOURNUMBER" target="_blank">Order Now</a>
-    </div>
-  </div>
-
-  <div class="menu-item">
-    <img src="https://delishglobe.com/wp-content/uploads/2024/10/Mutton-Biryani.png" alt="Mutton Biryani">
-    <div>
-      <h3>Mutton Biryani</h3>
-      <p>Rich and aromatic mutton biryani, perfect for every celebration.</p>
-      <a class="btn" href="https://wa.me/YOURNUMBER" target="_blank">Order Now</a>
-    </div>
-  </div>
-
-  <div class="menu-item">
-    <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Prawns-Biryani.png" alt="Prawns Biryani">
-    <div>
-      <h3>Prawns Biryani</h3>
-      <p>Fresh prawns cooked in traditional spices with fragrant basmati rice.</p>
-      <a class="btn" href="https://wa.me/YOURNUMBER" target="_blank">Order Now</a>
+  <div class="container">
+    <h2>Our Popular Dishes</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <h3>Mix Platter Mandi</h3>
+        <p>₹1,899.00</p>
+      </div>
+      <div class="menu-item">
+        <h3>Mutton Biryani</h3>
+        <p>₹399.00</p>
+      </div>
+      <div class="menu-item">
+        <h3>Prawns Biryani</h3>
+        <p>₹379.00</p>
+      </div>
+      <div class="menu-item">
+        <h3>Butter Chicken</h3>
+        <p>Price on request</p>
+      </div>
+      <div class="menu-item">
+        <h3>Irani Chai</h3>
+        <p>Price on request</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- About Section -->
-<section id="about">
-  <h2>About Us</h2>
-  <p>Landmark Family Restaurant is dedicated to providing a warm dining experience with delicious meals and biryani favorites for the whole family. Our recipes are made with passion and fresh ingredients.</p>
+<!-- Menu Details -->
+<section id="full-menu">
+  <div class="container">
+    <h2>Explore Our Menu</h2>
+    <!-- Add detailed menu sections here with similar structure -->
+    <!-- Example for Soups -->
+    <h3>Soups</h3>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <h4>Sweet Corn Soup</h4>
+        <p>₹129.00</p>
+      </div>
+      <div class="menu-item">
+        <h4>Hot & Sour Soup</h4>
+        <p>₹129.00</p>
+      </div>
+      <!-- Add more items as needed -->
+    </div>
+  </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Phone: <a href="tel:+911234567890">+91 1234567890</a></p>
-  <p>Email: <a href="mailto:landmark@example.com">landmark@example.com</a></p>
-  <p>Find us on the map:</p>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.123456789!2d78.474!3d17.385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb123456789abc%3A0x1234567890abcd!2sYour+Restaurant!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<!-- Reviews Section -->
+<section id="reviews">
+  <div class="container">
+    <h2>Customer Reviews</h2>
+    <div class="reviews">
+      <div class="review">
+        <p>"All varieties of foods are very tasty and quantity and quality they serve good." - Amina Begum</p>
+      </div>
+      <div class="review">
+        <p>"Worst food biryani rice not cooked properly. Waste of money bad experience..." - Arun</p>
+      </div>
+      <div class="review">
+        <p>"I ordered chicken 2 piece (juicy+fried) mandi." - Mahender Balasani</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact & Reservation -->
+<section id="reservation" class="contact-section">
+  <div class="container">
+    <h2>Reserve Your Table</h2>
+    <div class="contact-info">
+      <p>Address: 9-29/1, 3-10, RTC Colony, Ramanthapur, Hyderabad, Telangana 500013</p>
+      <p>Open till 1 AM | Delivery starts soon at 11:30 AM</p>
+      <p>Call or Book Online for Reservations</p>
+    </div>
+    <a href="https://swiggy.com" class="btn-reserve">Book Now</a>
+  </div>
 </section>
 
 <!-- Footer -->
 <footer>
-  <p>© 2026 Landmark Family Restaurant. All Rights Reserved.</p>
+  <div class="container">
+    <p>&copy; 2024 Landmark Family Restaurant. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>
