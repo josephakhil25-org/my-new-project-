@@ -6,16 +6,43 @@
     <title>Hareena Book Centre - Premium Books & Gifts | Ramanthapur, Hyderabad</title>
     <meta name="description" content="3.9★ Bookstore & gift shop in Ramanthapur. Bestsellers, exquisite stationery, thoughtful gifts. Open till 10:30 PM daily. +91 96180 25137">
     
-    <!-- Open Graph -->
+    <!-- Open Graph / SEO -->
     <meta property="og:title" content="Hareena Book Centre - Premium Books & Gifts">
     <meta property="og:description" content="Your premium bookstore & gift destination in Ramanthapur, Hyderabad.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1507842217343-583bb7278b66?w=1200">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Hareena Book Centre",
+        "description": "Premium bookstore & gift shop in Ramanthapur, Hyderabad",
+        "telephone": "+919618025137",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Before Baddhipochamma Temple, Rajiv Gandhi Statue opp. lane",
+            "addressLocality": "Ramanthapur",
+            "addressRegion": "Telangana",
+            "postalCode": "500013",
+            "addressCountry": "IN"
+        },
+        "openingHours": "Mo-Su 10:00-22:30",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "3.9",
+            "reviewCount": "84"
+        }
+    }
+    </script>
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%23D4AF37'/><text y='60' font-size='50' text-anchor='middle' fill='%23F5F2E9' font-family='serif'>📖</text></svg>">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
     <style>
         :root {
@@ -24,12 +51,19 @@
             --gold: #D4AF37;
             --white: #FAFAFA;
             --sage: #A8B5A2;
+            --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F7D794 100%);
+            --shadow-soft: 0 20px 60px rgba(0,0,0,0.1);
+            --shadow-hover: 0 30px 80px rgba(0,0,0,0.15);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -39,411 +73,17 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
         }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(26,26,26,0.6), rgba(26,26,26,0.6)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f8f5f0" width="1200" height="800"/><path fill="%23e8e2d5" d="M0 400Q200 300 400 450T800 400Q1000 350 1200 450V800H0Z"/><circle fill="%23d4af37" cx="300" cy="250" r="80"/><circle fill="%23a8b5a2" cx="900" cy="200" r="60"/><rect fill="%23f5f2e9" x="500" y="500" width="200" height="250" rx="20"/></svg>');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeInUp 1s 0.3s forwards;
-        }
-
-        .hero-content p {
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0;
-            animation: fadeInUp 1s 0.6s forwards;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            opacity: 0;
-            animation: fadeInUp 1s 0.9s forwards;
-        }
-
-        .cta-button {
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .cta-primary {
-            background: var(--gold);
-            color: var(--charcoal);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
-        }
-
-        .cta-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .rating-badge {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            background: var(--gold);
-            color: var(--charcoal);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
-        }
-
-        /* Sections */
-        section {
-            padding: 8rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 4rem;
-            color: var(--charcoal);
-        }
-
-        /* About Section */
-        .about {
-            background: var(--white);
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content p {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            color: #666;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .feature {
-            text-align: center;
-            padding: 2rem;
-            transition: transform 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Map Section */
-        .map-container {
-            height: 400px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            margin: 3rem auto;
-        }
-
-        /* Highlights */
-        .highlights {
-            background: linear-gradient(135deg, var(--beige) 0%, var(--white) 100%);
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .gallery-item {
-            height: 300px;
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        .gallery-placeholder {
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, var(--sage), var(--gold));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: var(--charcoal);
-            color: white;
-            text-align: center;
-        }
-
-        .cta-section .section-title {
-            color: white;
-            margin-bottom: 2rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--charcoal);
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem 2rem;
-        }
-
-        .business-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .info-item a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
+            background: var(--white);
             
-            .cta-button {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-            
-            section {
-                padding: 4rem 1rem;
-            }
-        }
-
-        /* Sticky CTA Mobile */
-        @media (max-width: 768px) {
-            .mobile-cta {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: var(--gold);
-                padding: 1rem;
-                display: flex;
-                gap: 1rem;
-                z-index: 1000;
-                box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="rating-badge">3.9 ★ (84)</div>
-        <div class="hero-content">
-            <h1>Discover Timeless Stories<br>& Thoughtful Gifts</h1>
-            <p>Your premium destination for bestsellers, rare finds, exquisite stationery & perfect gifts in Ramanthapur, Hyderabad.</p>
-            <div class="cta-buttons">
-                <a href="tel:+919618025137" class="cta-button cta-primary">
-                    📞 Call Now +91 96180 25137
-                </a>
-                <a href="https://maps.app.goo.gl/your-map-link" target="_blank" class="cta-button cta-secondary">
-                    🗺️ Get Directions
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h2 class="section-title">Where Books Meet Elegance</h2>
-        <div class="about-content">
-            <p>Nestled before Baddhipochamma Temple in Ramanthapur, Hareena Book Centre is more than a bookstore—it's a curated haven for literature lovers and gift seekers. From bestselling novels to premium stationery and thoughtful gifts, we bring joy through every page and parcel.</p>
-            <p><strong>Open daily till 10:30 PM</strong> – Your evening escape awaits.</p>
-        </div>
-        
-        <div class="features-grid">
-            <div class="feature">
-                <div class="feature-icon">📚</div>
-                <h3>Curated Bestsellers</h3>
-                <p>The latest releases and timeless classics, carefully selected for every reader.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🎁</div>
-                <h3>Exquisite Gifts</h3>
-                <p>Thoughtful presents beautifully wrapped, perfect for every occasion.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">✏️</div>
-                <h3>Premium Stationery</h3>
-                <p>Elegant notebooks, pens, and desk essentials for the modern professional.</p>
-            </div>
-        </div>
-
-        <iframe class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.5!2d78.52!3d17.38!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDIyJzQ3LjIiTiA3OMKwMzEnMjAuNSJF!5e0!3m2!1sen!2sin!4v1738790000000" allowfullscreen="" loading="lazy"></iframe>
-    </section>
-
-    <!-- Highlights Section -->
-    <section class="highlights">
-        <h2 class="section-title">What Makes Us Special</h2>
-        <div class="gallery">
-            <div class="gallery-item">
-                <div class="gallery-placeholder">Cozy Reading Corner</div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-placeholder">Gift Wrapping Station</div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-placeholder">Rare Book Display</div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-placeholder">Premium Stationery</div>
-            </div>
-        </div>
-        <div style="text-align: center; margin-top: 3rem;">
-            <div style="font-size: 1.5rem; color: var(--sage); font-weight: 600;">
-                84 Happy Readers • Open Late • Local Favorite
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2 class="section-title">Ready to Visit?</h2>
-        <p style="font-size: 1.3rem; margin-bottom: 3rem; opacity: 0.9;">Your perfect book or gift is waiting.</p>
-        <div class="cta-buttons" style="justify-content: center;">
-            <a href="tel:+919618025137" class="cta-button cta-primary" style="background: var(--gold); color: var(--charcoal);">
-                📞 Call +91 96180 25137
-            </a>
-            <a href="https://maps.app.goo.gl/your-map-link" target="_blank" class="cta-button cta-secondary" style="border-color: var(--gold); color: var(--gold);">
-                🗺️ Visit Us Today
-            </a>
-        </div>
-    </section>
-
-    <!-- Mobile Sticky CTA -->
-    <div class="mobile-cta">
-        <a href="tel:+919618025137" style="flex: 1; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 10px; text-align: center; color: white; text-decoration: none; font-weight: 600;">📞 Call Now</a>
-        <div style="font-size: 0.9rem; opacity: 0.8;">Open till 10:30 PM</div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="business-info">
-            <div>
-                <h4>Hareena Book Centre</h4>
-                <p>Before Baddhipochamma Temple,<br>Rajiv Gandhi Statue, opp. lane,<br>Indira Nagar, Ramanthapur,<br>Hyderabad, Telangana 500013</p>
-            </div>
-            <div class="info-item">
-                <h4>📞 +91 96180 25137</h4>
-                <p><a href="tel:+919618025137">Click to Call</a></p>
-            </div>
-            <div>
-                <h4>🕒 Hours</h4>
-                <p>Open Daily<br><strong>Closes 10:30 PM</strong></p>
-            </div>
-        </div>
-        <div style="border-top: 1px solid var(--sage); padding-top: 2rem; margin-top: 2rem; opacity: 0.7;">
-            © 2026 Hareena Book Centre. All rights reserved.
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Intersection Observer for animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        });
-
-        document.querySelectorAll('.feature, .gallery-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
