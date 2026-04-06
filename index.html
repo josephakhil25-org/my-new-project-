@@ -1,89 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hareena Book Centre - Premium Books & Gifts | Ramanthapur, Hyderabad</title>
-    <meta name="description" content="3.9★ Bookstore & gift shop in Ramanthapur. Bestsellers, exquisite stationery, thoughtful gifts. Open till 10:30 PM daily. +91 96180 25137">
-    
-    <!-- Open Graph / SEO -->
-    <meta property="og:title" content="Hareena Book Centre - Premium Books & Gifts">
-    <meta property="og:description" content="Your premium bookstore & gift destination in Ramanthapur, Hyderabad.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1507842217343-583bb7278b66?w=1200">
-    
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Hareena Book Centre",
-        "description": "Premium bookstore & gift shop in Ramanthapur, Hyderabad",
-        "telephone": "+919618025137",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Before Baddhipochamma Temple, Rajiv Gandhi Statue opp. lane",
-            "addressLocality": "Ramanthapur",
-            "addressRegion": "Telangana",
-            "postalCode": "500013",
-            "addressCountry": "IN"
-        },
-        "openingHours": "Mo-Su 10:00-22:30",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "3.9",
-            "reviewCount": "84"
-        }
-    }
-    </script>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%23D4AF37'/><text y='60' font-size='50' text-anchor='middle' fill='%23F5F2E9' font-family='serif'>📖</text></svg>">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-    <style>
-        :root {
-            --beige: #F5F2E9;
-            --charcoal: #1A1A1A;
-            --gold: #D4AF37;
-            --white: #FAFAFA;
-            --sage: #A8B5A2;
-            --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F7D794 100%);
-            --shadow-soft: 0 20px 60px rgba(0,0,0,0.1);
-            --shadow-hover: 0 30px 80px rgba(0,0,0,0.15);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hareena Book Centre - Premium Books & Gifts | Ramanthapur, Hyderabad</title>
+<meta name="description" content="3.9★ Bookstore & gift shop in Ramanthapur. Bestsellers, exquisite stationery, thoughtful gifts. Open till 10:30 PM daily. +91 96180 25137">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<!-- Open Graph / SEO -->
+<meta property="og:title" content="Hareena Book Centre - Premium Books & Gifts">
+<meta property="og:description" content="Your premium bookstore & gift destination in Ramanthapur, Hyderabad.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1507842217343-583bb7278b66?w=1200">
 
-        html {
-            scroll-behavior: smooth;
-        }
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%23D4AF37'/><text y='60' font-size='50' text-anchor='middle' fill='%23F5F2E9' font-family='serif'>📖</text></svg>">
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: var(--charcoal);
-            overflow-x: hidden;
-        }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
+<style>
+:root {
+  --beige: #F5F2E9;
+  --charcoal: #1A1A1A;
+  --gold: #D4AF37;
+  --white: #FAFAFA;
+  --sage: #A8B5A2;
+  --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F7D794 100%);
+  --shadow-soft: 0 20px 60px rgba(0,0,0,0.1);
+  --shadow-hover: 0 30px 80px rgba(0,0,0,0.15);
+}
 
-        /* Loading Animation */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--white);
-            
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; line-height:1.7; color: var(--charcoal); overflow-x: hidden; background: var(--beige); }
+
+h1,h2,h3,h4 { font-family:'Playfair Display', serif; font-weight:700; }
+
+/* HERO */
+.hero {
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color: #fff;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+  padding:0 20px;
+}
+.hero h1 { font-size:3rem; margin-bottom:15px; text-shadow: 1px 1px 10px rgba(0,0,0,0.5);}
+.hero p { font-size:1.3rem; margin-bottom:25px; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
+.hero .btn {
+  padding:15px 35px;
+  border-radius:50px;
+  font-weight:600;
+  margin:10px;
+  text-decoration:none;
+  transition:0.3s;
+}
+.btn-call { background: var(--gold); color:#fff; }
+.btn-call:hover { opacity:0.9; transform: scale(1.05);}
+.btn-directions { background:transparent; color:#fff; border:2px solid #fff; }
+.btn-directions:hover { background:#fff; color: var(--charcoal); transform: scale(1.05); }
+
+/* SECTIONS */
+section { padding:80px 20px; }
+.container { width:90%; max-width:1100px; margin:auto; text-align:center; }
+h2 { font-size:2.2rem; margin-bottom:30px; color: var(--charcoal); }
+
+/* CARDS */
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:25px; }
+.card {
+  background:#fff;
+  padding:30px 20px;
+  border-radius:15px;
+  box-shadow: var(--shadow-soft);
+  transition:0.3s;
+  font-size:1.1rem;
+}
+.card:hover { transform:translateY(-5px); box-shadow: var(--shadow-hover); }
+
+/* WHY US */
+.why { background: var(--charcoal); color: #fff; }
+.why .grid div { padding:25px; font-weight:500; font-size:1.1rem; transition:0.3s; }
+.why .grid div:hover { transform:translateY(-3px); }
+
+/* CTA */
+.cta {
+  background: var(--gradient-gold);
+  color:#fff;
+  padding:60px 20px;
+  border-radius:20px;
+  margin:50px 0;
+}
+.cta a { background:#fff; color: var(--charcoal); padding:15px 40px; border-radius:50px; font-weight:600; text-decoration:none; transition:0.3s; }
+.cta a:hover { opacity:0.9; transform:scale(1.05); }
+
+/* FOOTER */
+footer { background: var(--charcoal); color:#fff; padding:20px; text-align:center; font-size:0.9rem; }
+
+/* FLOATING CALL BUTTON */
+.call-btn {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background: var(--gold);
+  color:#fff;
+  padding:18px;
+  border-radius:50%;
+  font-size:20px;
+  text-decoration:none;
+  box-shadow:0 5px 20px rgba(0,0,0,0.3);
+  transition:0.3s;
+}
+.call-btn:hover { transform: scale(1.1); opacity:0.9; }
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .hero h1 { font-size:2rem; }
+  .hero p { font-size:1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Hareena Book Centre</h1>
+  <p>Your Premium Local Destination for Books, Gifts & Stationery</p>
+  <a href="tel:+919618025137" class="btn btn-call">Call Now</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=Hareena+Book+Centre,+Ramanthapur,+Hyderabad" class="btn btn-directions" target="_blank">Get Directions</a>
+  <p style="margin-top:15px;">⭐ Trusted by 84 local customers</p>
+</div>
+
+<!-- ABOUT -->
+<section>
+  <div class="container">
+    <h2>About Us</h2>
+    <p>Hareena Book Centre is your friendly neighborhood shop offering a curated range of books, unique gifts, and stationery essentials. We serve students, families, and gift seekers with quality, affordability, and a premium shopping experience.</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section>
+  <div class="container">
+    <h2>Our Products</h2>
+    <div class="grid">
+      <div class="card">Books 📚</div>
+      <div class="card">Gifts 🎁</div>
+      <div class="card">Stationery ✏️</div>
+      <div class="card">School Supplies 🎒</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why">
+  <div class="container">
+    <h2>Why Choose Us</h2>
+    <div class="grid">
+      <div>✔ Wide Variety of Products</div>
+      <div>✔ Affordable Pricing</div>
+      <div>✔ Convenient Location</div>
+      <div>✔ Friendly Personalized Service</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Visit Hareena Book Centre Today!</h2>
+    <a href="tel:+919618025137">Call Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Hareena Book Centre</p>
+</footer>
+
+<!-- FLOATING CALL BUTTON -->
+<a href="tel:+919618025137" class="call-btn"><i class="fas fa-phone"></i></a>
+
+</body>
+</html>
