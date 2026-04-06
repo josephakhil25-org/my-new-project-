@@ -1,286 +1,201 @@
 <!DOCTYPE html>
+<html>
+<head>
+  <title>Landmark Restaurant Menu</title>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Landmark Family Restaurant - Authentic Hyderabadi Flavors</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "primary": "#f2ca50",
-                    "on-primary": "#3c2f00",
-                    "primary-fixed-dim": "#e9c349",
-                    "on-primary-fixed": "#241a00",
-                    "outline": "#99907c",
-                    "primary-container": "#d4af37",
-                    "tertiary-fixed-dim": "#b4c5ff",
-                    "secondary": "#c9c6bf",
-                    "on-secondary-fixed-variant": "#474741",
-                    "surface-dim": "#131313",
-                    "on-tertiary-fixed-variant": "#27438a",
-                    "surface-variant": "#353535",
-                    "on-primary-container": "#554300",
-                    "secondary-fixed": "#e5e2db",
-                    "inverse-on-surface": "#313030",
-                    "surface-container-high": "#2a2a2a",
-                    "on-error": "#690005",
-                    "tertiary-container": "#97b0ff",
-                    "surface-tint": "#e9c349",
-                    "inverse-surface": "#e5e2e1",
-                    "on-secondary-container": "#b7b5ae",
-                    "error-container": "#93000a",
-                    "secondary-fixed-dim": "#c9c6bf",
-                    "secondary-container": "#474741",
-                    "on-background": "#e5e2e1",
-                    "outline-variant": "#4d4635",
-                    "surface-bright": "#393939",
-                    "on-surface-variant": "#d0c5af",
-                    "on-tertiary-container": "#254188",
-                    "tertiary": "#bfcdff",
-                    "on-error-container": "#ffdad6",
-                    "tertiary-fixed": "#dbe1ff",
-                    "surface-container-lowest": "#0e0e0e",
-                    "on-tertiary": "#082b72",
-                    "inverse-primary": "#735c00",
-                    "on-surface": "#e5e2e1",
-                    "primary-fixed": "#ffe088",
-                    "on-primary-fixed-variant": "#574500",
-                    "on-secondary-fixed": "#1c1c17",
-                    "on-secondary": "#31312b",
-                    "surface-container": "#20201f",
-                    "error": "#ffb4ab",
-                    "on-tertiary-fixed": "#00174b",
-                    "surface-container-highest": "#353535",
-                    "background": "#131313",
-                    "surface-container-low": "#1c1b1b",
-                    "surface": "#131313"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "fontFamily": {
-                    "headline": ["Noto Serif"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        body { background-color: #131313; color: #e5e2e1; }
-        .font-notoserif { font-family: 'Noto Serif', serif; }
-        .font-inter { font-family: 'Inter', sans-serif; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    </style>
+  <!-- 🔥 Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 42px;
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(45deg, #ff4d4d, #ffd369);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 2px;
+    }
+
+    .section {
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 26px;
+      margin-bottom: 15px;
+      border-left: 5px solid #ff4d4d;
+      padding-left: 10px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      transform: scale(1.07);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    h3 {
+      margin: 12px 0 5px;
+      font-size: 20px;
+    }
+
+    .desc {
+      font-size: 13px;
+      opacity: 0.85;
+    }
+
+    .price {
+      margin: 10px 0;
+      font-weight: bold;
+      color: #ffd369;
+      font-size: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 14px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background: #1ebc59;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  </style>
 </head>
-<body class="font-inter">
-<!-- TopNavBar -->
-<header class="bg-[#131313]/80 backdrop-blur-xl docked full-width top-0 z-50 sticky shadow-[0px_20px_40px_rgba(0,0,0,0.4)]">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
-<div class="text-2xl font-notoserif italic font-bold text-[#f2ca50]">Landmark</div>
-<nav class="hidden md:flex items-center space-x-8 font-inter tracking-wide uppercase text-xs">
-<a class="text-[#f2ca50] border-b-2 border-[#f2ca50] pb-1" href="#">Menu</a>
-<a class="text-[#e5e2e1] hover:text-[#f2ca50] transition-colors hover:bg-white/5 px-2 py-1 rounded" href="#">Specials</a>
-<a class="text-[#e5e2e1] hover:text-[#f2ca50] transition-colors hover:bg-white/5 px-2 py-1 rounded" href="#">Reservations</a>
-<a class="text-[#e5e2e1] hover:text-[#f2ca50] transition-colors hover:bg-white/5 px-2 py-1 rounded" href="#">Contact</a>
-</nav>
-<div class="flex items-center space-x-6">
-<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-lg font-bold text-sm tracking-tight active:scale-95 duration-200 ease-in-out transition-all">
-                    Order Online
-                </button>
+
+<body>
+
+<header>🍽 Landmark Family Restaurant</header>
+
+<!-- 🍛 BIRYANI -->
+<div class="section">
+  <div class="title">🍛 Biryani</div>
+  <div class="container">
+
+    <div class="card">
+      <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg">
+      <h3>Chicken Biryani</h3>
+      <p class="desc">Spicy Hyderabadi dum biryani</p>
+      <p class="price">Starts with ₹309</p>
+      <a class="btn" href="#">Order Now</a>
+    </div>
+
+    <div class="card">
+      <img src="https://delishglobe.com/wp-content/uploads/2024/10/Mutton-Biryani.png">
+      <h3>Mutton Biryani</h3>
+      <p class="desc">Rich & flavorful with tender meat</p>
+      <p class="price">Starts with ₹349</p>
+      <a class="btn" href="#">Order Now</a>
+    </div>
+
+    <div class="card">
+      <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/12/Prawn-Biryani-Recipe.jpg">
+      <h3>Prawns Biryani</h3>
+      <p class="desc">Seafood special delight</p>
+      <p class="price">Starts with ₹379</p>
+      <a class="btn" href="#">Order Now</a>
+    </div>
+
+  </div>
 </div>
+
+<!-- 🍗 MANDI -->
+<div class="section">
+  <div class="title">🍗 Mandi</div>
+  <div class="container">
+
+    <div class="card">
+      <img src="https://hinzcooking.com/wp-content/uploads/2021/06/chicken-mandi.jpg">
+      <h3>Chicken Mandi</h3>
+      <p class="desc">Juicy chicken with Arabian rice</p>
+      <p class="price">Starts with ₹269</p>
+      <a class="btn" href="#">Order Now</a>
+    </div>
+
+    <div class="card">
+      <img src="https://i.ytimg.com/vi/1LphoJ8Zx6U/hq720.jpg">
+      <h3>Mutton Mandi</h3>
+      <p class="desc">Authentic mandi experience</p>
+      <p class="price">Starts with ₹289</p>
+      <a class="btn" href="#">Order Now</a>
+    </div>
+
+  </div>
 </div>
-</header>
-<!-- Hero Section -->
-<section class="relative h-[921px] flex items-center overflow-hidden">
-<div class="absolute inset-0 z-0">
-<div class="absolute inset-0 bg-gradient-to-r from-[#0e0e0e] via-[#0e0e0e]/40 to-transparent z-10"></div>
-<img class="w-full h-full object-cover" data-alt="Cinematic close-up of traditional Hyderabadi Mutton Biryani with aromatic steam rising, rich saffron colors, and intricate spice textures in candlelight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVA2vc6csSa6cpAqJWSYceBdZlAm7sSR5l8cYVpQQZvsopjKGUbaFoHYaevvnZlVLldxu5jrOcvaWLyS9PigurRczg90bS_qrjpz0p7C6qsjvFoWYoZdSTZ3DWUmnKZ-0QTCArQP0v-YhrB0wj4gpJb0sP-RXrGVLbiYLSBz2o4JJXPlc_6ZmLRo9QRQu08EGl_xhT9VMx0if3tTrw7Ro0HPEEKGEYFaytUblGixLhTfs2G4EsFhkiS3Ina-tl0_Xo4kloI6tXg7g"/>
+
+<!-- 🍢 STARTERS -->
+<div class="section">
+  <div class="title">🍢 Starters</div>
+  <div class="container">
+
+    <div class="card">
+      <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/03/chicken-65-restaurant-style-500x500.jpg">
+      <h3>Chicken 65</h3>
+      <p class="desc">Crispy spicy fried chicken</p>
+      <p class="price">Starts with ₹298</p>
+      <a class="btn" href="#">Order Now</a>
+    </div>
+
+    <div class="card">
+      <img src="https://static.toiimg.com/thumb/74654861.cms?width=573&height=430">
+      <h3>Butter Chicken</h3>
+      <p class="desc">Creamy rich gravy dish</p>
+      <p class="price">Starts with ₹249</p>
+      <a class="btn" href="#">Order Now</a>
+    </div>
+
+    <div class="card">
+      <img src="https://deccanbawarchi.com/wp-content/uploads/2023/07/PANEER-MANCHURIAN-scaled.jpg">
+      <h3>Paneer Manchurian</h3>
+      <p class="desc">Indo-Chinese spicy paneer</p>
+      <p class="price">Starts with ₹233</p>
+      <a class="btn" href="#">Order Now</a>
+    </div>
+
+  </div>
 </div>
-<div class="relative z-20 max-w-screen-2xl mx-auto px-8 w-full">
-<div class="max-w-3xl">
-<h1 class="font-notoserif text-6xl md:text-8xl font-bold leading-[1.1] text-on-background tracking-tight mb-6">
-                    Authentic Hyderabadi <br/>
-<span class="text-primary italic">Flavors</span>, Crafted with Passion.
-                </h1>
-<p class="font-inter text-xl text-on-surface-variant/80 max-w-xl mb-10 leading-relaxed">
-                    Experience the finest Mandi, Biryani, and Irani Chai in Hyderabad since 1990. A legacy of taste served on your plate.
-                </p>
-<div class="flex flex-wrap gap-4">
-<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-all shadow-xl">
-                        Order Online
-                    </button>
-<button class="border border-outline-variant/30 text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary/10 active:scale-95 transition-all">
-                        Book a Table
-                    </button>
-</div>
-</div>
-</div>
-</section>
-<!-- Features Bento Grid -->
-<section class="py-24 bg-surface px-8">
-<div class="max-w-screen-2xl mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Card 1 -->
-<div class="bg-surface-container p-10 rounded-xl border-b border-transparent hover:border-primary/20 transition-all group">
-<span class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">workspace_premium</span>
-<h3 class="font-notoserif text-2xl font-bold mb-4">Award-Winning Biryani</h3>
-<p class="text-on-surface-variant leading-relaxed">Slow-cooked to perfection using secret heritage spices passed down through three generations.</p>
-</div>
-<!-- Card 2 -->
-<div class="bg-surface-container p-10 rounded-xl border-b border-transparent hover:border-primary/20 transition-all group">
-<span class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">restaurant_menu</span>
-<h3 class="font-notoserif text-2xl font-bold mb-4">Authentic Mandi Platters</h3>
-<p class="text-on-surface-variant leading-relaxed">A communal dining experience featuring smoked rice and succulent meats served in traditional style.</p>
-</div>
-<!-- Card 3 -->
-<div class="bg-surface-container p-10 rounded-xl border-b border-transparent hover:border-primary/20 transition-all group">
-<span class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 transition-transform">coffee</span>
-<h3 class="font-notoserif text-2xl font-bold mb-4">Classic Irani Chai Experience</h3>
-<p class="text-on-surface-variant leading-relaxed">Rich, creamy, and brewed for hours. The soul of Hyderabad in every lingering sip.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Popular Highlights Scroll -->
-<section class="py-24 bg-surface-container-low overflow-hidden">
-<div class="max-w-screen-2xl mx-auto px-8 mb-12 flex justify-between items-end">
-<div>
-<h2 class="font-notoserif text-4xl font-bold text-primary mb-2">Popular Highlights</h2>
-<p class="text-on-surface-variant">Chef's recommendations for today</p>
-</div>
-<div class="flex space-x-2">
-<button class="p-3 rounded-full border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-primary transition-colors">
-<span class="material-symbols-outlined">chevron_left</span>
-</button>
-<button class="p-3 rounded-full border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-primary transition-colors">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
-</div>
-</div>
-<div class="flex gap-8 overflow-x-auto px-8 pb-8 hide-scrollbar snap-x">
-<!-- Product Card 1 -->
-<div class="min-w-[400px] bg-surface snap-start rounded-xl overflow-hidden group shadow-2xl">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Traditional Arabian Mandi platter with large portion of seasoned rice and grilled chicken legs on a circular metal dish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVYkkuJPGwg6oIxGzHs-hMrXnIMdKwKkRQcHpM_qY4icGVZnJ-O_eNQvVZ6Y2jQKFTJBthrZYsUDIYWmmb-1bEop-aMojOCPHGdFb8teTrRx87xuik-ZqLHaFubiL_5YYdNS8_7yRAz_uwtBkI19YUHI2EWxAynNVAu91R0zcASZfmIXsOvg5wkvbbjsdyBZDkta1stSK98zFCiHF5mmKNxnR8xWcniXcNW_tddZQ_hfhhRnJ-gvOETV6Pja3EdNbqgx3QD4op1S8"/>
-<div class="absolute top-4 right-4 bg-primary text-on-primary px-3 py-1 rounded font-bold text-sm">Best Seller</div>
-</div>
-<div class="p-8">
-<div class="flex justify-between items-start mb-4">
-<h4 class="font-notoserif text-2xl font-bold">Mix Platter Mandi</h4>
-<span class="text-primary font-bold text-xl">₹1,899.00</span>
-</div>
-<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Perfect for sharing. Includes lamb, chicken, and fish over traditional aromatic Mandi rice.</p>
-<button class="w-full py-3 border border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95">Add to Order</button>
-</div>
-</div>
-<!-- Product Card 2 -->
-<div class="min-w-[400px] bg-surface snap-start rounded-xl overflow-hidden group shadow-2xl">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Mutton Biryani served in a traditional clay pot with garnish of fried onions and fresh coriander in a dark mood setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzmG-_SY-ncnoFrqEw9va9JuIVKkxsY8W4HmJt8PalJdawAqH5IC7yf4wO3UhlTc8NOqkAQjp5QgHkKfPSjPpUu2KnSZrH6BQscMFO6luIOyxFwMjjU6dtGceNNrddy1cBkomWSzSi-i8COuWI6zZ5NNW8cU8QkZdd3rUVg5w-OxGvK5rO7RRyAyApJdA63HgNGlbh9NCIfITG8byHWpHkedW6DJvbusLW4Y4BfVMi3leEq6RvH-SE3N-g-5hU855x_ZDoeQEDCpU"/>
-</div>
-<div class="p-8">
-<div class="flex justify-between items-start mb-4">
-<h4 class="font-notoserif text-2xl font-bold">Mutton Biryani</h4>
-<span class="text-primary font-bold text-xl">₹399.00</span>
-</div>
-<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Tender mutton pieces layered with long-grain basmati rice and premium Dum spices.</p>
-<button class="w-full py-3 border border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95">Add to Order</button>
-</div>
-</div>
-<!-- Product Card 3 -->
-<div class="min-w-[400px] bg-surface snap-start rounded-xl overflow-hidden group shadow-2xl">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Small glass of Irani Chai with thick foam top, served with Osmania biscuits on a rustic wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfC89vNZnIYi0D2kct7MVH6PrsRLnHVB-5oddNlGA-us3bJKN4nd3JX87-mSjtumCxW-h4H7Jja_KhcCuUfAPHD2ncI8awaIWGmRtvrloeeiPVp7uzhS5m34VNVrQgHGkQbs_IzwWHcvnrJl2Va1uUVd9rXaQAVZVsuVsdr7ubFTdmFa-AoZZQC6gB8FdWrtxaCkPEcsHoJMvSOLxAvWFbEFaAQsSo5jNiGLDTMJ-ESG-O5IuBnD8kYZAUPAph7iXLRnUxinLYKlM"/>
-</div>
-<div class="p-8">
-<div class="flex justify-between items-start mb-4">
-<h4 class="font-notoserif text-2xl font-bold">Landmark Special Chai</h4>
-<span class="text-primary font-bold text-xl">₹45.00</span>
-</div>
-<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Our signature Irani tea, double-boiled for maximum richness and served with a biscuit.</p>
-<button class="w-full py-3 border border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-on-primary transition-all active:scale-95">Add to Order</button>
-</div>
-</div>
-</div>
-</section>
-<!-- About Us Section -->
-<section class="py-32 bg-surface">
-<div class="max-w-screen-2xl mx-auto px-8">
-<div class="flex flex-col md:flex-row items-center gap-16">
-<div class="w-full md:w-1/2 relative">
-<div class="aspect-[4/5] rounded-tl-[100px] rounded-br-[100px] overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="A sophisticated restaurant interior with warm ambient lighting, elegant dark furniture, and heritage architecture elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUCFX4Q8CWIOETliQdvzXjC39Gv0kPU-78xSGgymEKKC5dlXy7Sc_Lw-FoMlb2PhgFJ1266tXEAezFFsiBWOOyZycmvEvO4Xr5UH36Wvj6j46R22JWF-bbnrrTFFoyRsKZb6oxupv0zAf-9SaxY5DcFooOrrTkkzdN9d-lo26muYEjOZT7KXsWIyEhHcglY0asWLLAfhvPN9YcDaASQtLim1oSzZV2oXtzk5mzpi9JfEDhmkHSrxniJzYdEgCcRDEMa7UiRH8CrOs"/>
-</div>
-<div class="absolute -bottom-8 -right-8 bg-primary-container p-8 rounded-xl shadow-2xl">
-<div class="font-notoserif text-4xl font-bold text-on-primary-container">34+</div>
-<div class="text-xs uppercase tracking-widest text-on-primary-container font-bold">Years of Legacy</div>
-</div>
-</div>
-<div class="w-full md:w-1/2">
-<span class="text-primary tracking-[0.3em] uppercase text-sm font-bold block mb-4">Our Heritage</span>
-<h2 class="font-notoserif text-5xl font-bold mb-8 leading-tight text-on-background">A Taste That Echoes Through History</h2>
-<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
-                        Founded in 1990, Landmark Family Restaurant began as a small passion project in the heart of Hyderabad. Today, it stands as a testament to authentic Nizami hospitality, bringing the secrets of royal kitchens to every family table. We don't just serve food; we serve memories marinated in tradition.
-                    </p>
-<a class="inline-flex items-center text-primary font-bold group" href="#">
-<span class="mr-2">Learn More About Our Journey</span>
-<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-[#0e0e0e] text-[#e5e2e1]/60">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full max-w-screen-2xl mx-auto">
-<div class="col-span-1 md:col-span-1">
-<div class="text-xl font-notoserif text-[#f2ca50] mb-6">Landmark</div>
-<p class="text-sm leading-relaxed mb-6">Redefining Hyderabadi dining since 1990. Join us for a royal experience of taste and tradition.</p>
-</div>
-<div>
-<h5 class="font-inter text-sm uppercase tracking-widest text-[#f2ca50] mb-6 font-bold">Navigation</h5>
-<ul class="space-y-3 text-sm">
-<li><a class="hover:text-[#f2ca50] transition-colors" href="#">Menu</a></li>
-<li><a class="hover:text-[#f2ca50] transition-colors" href="#">Specials</a></li>
-<li><a class="hover:text-[#f2ca50] transition-colors" href="#">Reservations</a></li>
-<li><a class="hover:text-[#f2ca50] transition-colors" href="#">Contact</a></li>
-</ul>
-</div>
-<div>
-<h5 class="font-inter text-sm uppercase tracking-widest text-[#f2ca50] mb-6 font-bold">Follow Us</h5>
-<ul class="space-y-3 text-sm">
-<li><a class="hover:text-[#f2ca50] transition-colors" href="#">Instagram</a></li>
-<li><a class="hover:text-[#f2ca50] transition-colors" href="#">Facebook</a></li>
-<li><a class="hover:text-[#f2ca50] transition-colors" href="#">Swiggy</a></li>
-<li><a class="hover:text-[#f2ca50] transition-colors" href="#">Zomato</a></li>
-</ul>
-</div>
-<div>
-<h5 class="font-inter text-sm uppercase tracking-widest text-[#f2ca50] mb-6 font-bold">Find Us</h5>
-<p class="text-sm leading-relaxed mb-4">Hitech City Road, Jubilee Hills, Hyderabad, TS - 500033</p>
-<div class="text-sm font-bold text-[#e5e2e1]">Open 11:00 AM - 12:30 AM</div>
-</div>
-</div>
-<div class="border-t border-white/5 py-8 px-12 flex flex-col md:row justify-between items-center text-xs tracking-widest uppercase gap-4">
-<div>© 2024 Landmark Family Restaurant. Heritage Taste of Hyderabad.</div>
-<div class="flex space-x-6">
-<a class="hover:text-[#f2ca50] transition-colors" href="#">Privacy Policy</a>
-<a class="hover:text-[#f2ca50] transition-colors" href="#">Terms of Service</a>
-</div>
-</div>
-</footer>
-</body></html>
+
+<footer>🔥 Designed by you bro | Next Level Menu UI</footer>
+
+</body>
+</html>
