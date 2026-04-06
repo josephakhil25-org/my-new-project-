@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Landmark Family Restaurant</title>
+  <title>Landmark Restaurant Menu</title>
+
   <style>
     body {
-      font-family: Arial;
       margin: 0;
-      background: #f5f5f5;
+      font-family: Arial;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
     }
 
     header {
-      background: #ff4d4d;
-      color: white;
-      padding: 15px;
       text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
     }
 
-    .container {
+    .section {
       padding: 20px;
     }
 
+    .title {
+      font-size: 22px;
+      margin-bottom: 10px;
+      border-left: 5px solid #ff4d4d;
+      padding-left: 10px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
     .card {
-      background: white;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      border-radius: 15px;
       padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
     }
 
     img {
@@ -33,67 +53,109 @@
       border-radius: 10px;
     }
 
+    .price {
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
     .btn {
       display: inline-block;
-      padding: 10px 15px;
-      background: green;
+      padding: 8px 12px;
+      background: #25D366;
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      margin-top: 10px;
+      font-size: 14px;
     }
 
     .btn:hover {
-      background: darkgreen;
+      background: #1ebc59;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>🍽 Landmark Family Restaurant</h1>
-  <p>Ramanthapur, Hyderabad</p>
-</header>
+<header>🍽 Landmark Family Restaurant</header>
 
-<div class="container">
+<!-- 🍛 BIRYANI -->
+<div class="section">
+  <div class="title">🍛 Biryani</div>
+  <div class="container">
 
-  <!-- FOOD -->
-  <div class="card">
-    <h2>🔥 Special Biryani</h2>
-    <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
-    <p>Delicious Hyderabadi Biryani starting at ₹309</p>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
+      <h3>Chicken Biryani</h3>
+      <p class="price">₹309</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Chicken Biryani">Order</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0">
+      <h3>Mutton Biryani</h3>
+      <p class="price">₹349</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Mutton Biryani">Order</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950">
+      <h3>Prawns Biryani</h3>
+      <p class="price">₹379</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Prawns Biryani">Order</a>
+    </div>
+
   </div>
+</div>
 
-  <div class="card">
-    <h2>🍗 Chicken Mandi</h2>
-    <img src="https://images.unsplash.com/photo-1553621042-f6e147245754">
-    <p>Juicy mandi with rich flavors starting ₹269</p>
+<!-- 🍗 MANDI -->
+<div class="section">
+  <div class="title">🍗 Mandi</div>
+  <div class="container">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1553621042-f6e147245754">
+      <h3>Chicken Mandi</h3>
+      <p class="price">₹269</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Chicken Mandi">Order</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+      <h3>Mutton Mandi</h3>
+      <p class="price">₹289</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Mutton Mandi">Order</a>
+    </div>
+
   </div>
+</div>
 
-  <div class="card">
-    <h2>🍛 Butter Chicken</h2>
-    <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398">
-    <p>Creamy butter chicken with naan</p>
+<!-- 🍢 STARTERS -->
+<div class="section">
+  <div class="title">🍢 Starters</div>
+  <div class="container">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1601050690117-94f5f6fae3c5">
+      <h3>Chicken 65</h3>
+      <p class="price">₹298</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Chicken 65">Order</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398">
+      <h3>Butter Chicken</h3>
+      <p class="price">₹249</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Butter Chicken">Order</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1631515242808-497c3fbd3971">
+      <h3>Paneer Manchurian</h3>
+      <p class="price">₹233</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Paneer Manchurian">Order</a>
+    </div>
+
   </div>
-
-  <!-- REVIEWS -->
-  <div class="card">
-    <h2>⭐ Reviews</h2>
-    <p>👍 "Food is very tasty and good quantity"</p>
-    <p>😡 "Worst experience, rice not cooked"</p>
-    <p>😋 "Mandi is awesome and budget friendly"</p>
-    <p><b>Rating: 3.7 / 5</b></p>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="card">
-    <h2>📞 Order Now</h2>
-    <a class="btn" href="https://wa.me/919876543210" target="_blank">
-      WhatsApp Order
-    </a>
-  </div>
-
 </div>
 
 </body>
