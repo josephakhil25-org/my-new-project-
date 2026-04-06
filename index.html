@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Food Menu</title>
+  <title>Landmark Restaurant Menu</title>
+
   <style>
     body {
+      margin: 0;
       font-family: Arial;
-      background: #111;
+      background: linear-gradient(to right, #141e30, #243b55);
       color: white;
+    }
+
+    header {
       text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 22px;
+      margin-bottom: 10px;
+      border-left: 5px solid #ff4d4d;
+      padding-left: 10px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: #1e1e1e;
-      margin: 20px auto;
-      padding: 15px;
-      width: 300px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
       border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
     }
 
     img {
@@ -23,34 +53,109 @@
       border-radius: 10px;
     }
 
-    h2 {
-      color: #ffcc00;
+    .price {
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 12px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background: #1ebc59;
     }
   </style>
 </head>
 
 <body>
 
-<h1>🔥 Food Menu 🔥</h1>
+<header>🍽 Landmark Family Restaurant</header>
 
-<div class="card">
-  <h2>Chicken Mandi</h2>
-  <img src="https://images.unsplash.com/photo-1604908176997-431c8c7b1e56">
+<!-- 🍛 BIRYANI -->
+<div class="section">
+  <div class="title">🍛 Biryani</div>
+  <div class="container">
+
+    <div class="card">
+      <img src="https://source.unsplash.com/600x400/?biryani">
+      <h3>Chicken Biryani</h3>
+      <p class="price">₹309</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Chicken Biryani">Order</a>
+    </div>
+
+    <div class="card">
+      <img src="https://source.unsplash.com/600x400/?mutton-biryani">
+      <h3>Mutton Biryani</h3>
+      <p class="price">₹349</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Mutton Biryani">Order</a>
+    </div>
+
+    <div class="card">
+      <img src="https://source.unsplash.com/600x400/?prawns-biryani">
+      <h3>Prawns Biryani</h3>
+      <p class="price">₹379</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Prawns Biryani">Order</a>
+    </div>
+
+  </div>
 </div>
 
-<div class="card">
-  <h2>Mutton Mandi</h2>
-  <img src="https://images.unsplash.com/photo-1625944525903-7c4b4b06c6f3">
+<!-- 🍗 MANDI -->
+<div class="section">
+  <div class="title">🍗 Mandi</div>
+  <div class="container">
+
+    <div class="card">
+      <img src="https://source.unsplash.com/600x400/?arabic-mandi">
+      <h3>Chicken Mandi</h3>
+      <p class="price">₹269</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Chicken Mandi">Order</a>
+    </div>
+
+    <div class="card">
+      <img src="https://source.unsplash.com/600x400/?mutton-mandi">
+      <h3>Mutton Mandi</h3>
+      <p class="price">₹289</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Mutton Mandi">Order</a>
+    </div>
+
+  </div>
 </div>
 
-<div class="card">
-  <h2>Chicken 65</h2>
-  <img src="https://images.unsplash.com/photo-1625944231341-0e0a8a5e50d1">
-</div>
+<!-- 🍢 STARTERS -->
+<div class="section">
+  <div class="title">🍢 Starters</div>
+  <div class="container">
 
-<div class="card">
-  <h2>Paneer Manchurian</h2>
-  <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7">
+    <div class="card">
+      <img src="https://source.unsplash.com/600x400/?chicken-65">
+      <h3>Chicken 65</h3>
+      <p class="price">₹298</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Chicken 65">Order</a>
+    </div>
+
+    <div class="card">
+      <img src="https://source.unsplash.com/600x400/?butter-chicken">
+      <h3>Butter Chicken</h3>
+      <p class="price">₹249</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Butter Chicken">Order</a>
+    </div>
+
+    <div class="card">
+      <img src="https://source.unsplash.com/600x400/?paneer-manchurian">
+      <h3>Paneer Manchurian</h3>
+      <p class="price">₹233</p>
+      <a class="btn" href="https://wa.me/919876543210?text=I want Paneer Manchurian">Order</a>
+    </div>
+
+  </div>
 </div>
 
 </body>
