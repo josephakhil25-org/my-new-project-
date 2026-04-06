@@ -6,44 +6,45 @@
     body {
       font-family: Arial;
       margin: 0;
-      background: #fff8f0;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: #ff4d4d;
+      color: white;
+      padding: 15px;
       text-align: center;
     }
-    header {
-      background: #b22222;
-      color: white;
+
+    .container {
       padding: 20px;
     }
-    section {
-      padding: 20px;
-    }
-    .box {
+
+    .card {
       background: white;
-      margin: 15px;
       padding: 15px;
+      margin-bottom: 15px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    h2 {
-      color: #b22222;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
     }
+
     .btn {
+      display: inline-block;
+      padding: 10px 15px;
       background: green;
       color: white;
-      padding: 10px 20px;
       text-decoration: none;
       border-radius: 5px;
-    }
-    img {
-      width: 90%;
-      border-radius: 10px;
       margin-top: 10px;
     }
-    iframe {
-      width: 90%;
-      height: 250px;
-      border-radius: 10px;
-      border: 0;
+
+    .btn:hover {
+      background: darkgreen;
     }
   </style>
 </head>
@@ -52,57 +53,48 @@
 
 <header>
   <h1>🍽 Landmark Family Restaurant</h1>
-  <p>⭐ 3.7 Rating | 2000+ Reviews</p>
-  <p>Best Biryani & Mandi in Hyderabad 🍛🔥</p>
+  <p>Ramanthapur, Hyderabad</p>
 </header>
 
-<section>
+<div class="container">
 
-  <div class="box">
-    <h2>🔥 Popular Dishes</h2>
-    <p>Mix Platter Mandi – ₹1899</p>
-    <p>Mutton Biryani – ₹399</p>
-    <p>Prawns Biryani – ₹379</p>
-    <p>Butter Chicken – ₹249</p>
-
-    <!-- Image -->
+  <!-- FOOD -->
+  <div class="card">
+    <h2>🔥 Special Biryani</h2>
     <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
+    <p>Delicious Hyderabadi Biryani starting at ₹309</p>
   </div>
 
-  <div class="box">
-    <h2>🍛 Special Menu</h2>
-    <p>Chicken Mandi – ₹269</p>
-    <p>Mutton Mandi – ₹289</p>
-    <p>Paneer Manchurian – ₹233</p>
-    <p>Chicken 65 – ₹298</p>
-
-    <img src="https://source.unsplash.com/600x400/?restaurant-food" alt="Food">
+  <div class="card">
+    <h2>🍗 Chicken Mandi</h2>
+    <img src="https://images.unsplash.com/photo-1553621042-f6e147245754">
+    <p>Juicy mandi with rich flavors starting ₹269</p>
   </div>
 
-  <div class="box">
-    <h2>⭐ Customer Reviews</h2>
-    <p>😊 "Food is very tasty and good quantity"</p>
-    <p>😐 "Budget friendly but taste average"</p>
-    <p>😡 "Service and hygiene needs improvement"</p>
+  <div class="card">
+    <h2>🍛 Butter Chicken</h2>
+    <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398">
+    <p>Creamy butter chicken with naan</p>
   </div>
 
-  <div class="box">
-    <h2>📍 Location</h2>
-    <p>RTC Colony, Ramanthapur, Hyderabad</p>
-
-    <!-- Google Map -->
-   <img src="https://images.unsplash.com/photo-1553621042-f6e147245754">
+  <!-- REVIEWS -->
+  <div class="card">
+    <h2>⭐ Reviews</h2>
+    <p>👍 "Food is very tasty and good quantity"</p>
+    <p>😡 "Worst experience, rice not cooked"</p>
+    <p>😋 "Mandi is awesome and budget friendly"</p>
+    <p><b>Rating: 3.7 / 5</b></p>
   </div>
 
-  <div class="box">
-    <h2>📞 Contact</h2>
-    <p>Call: 9XXXXXXXXX</p>
-
-    <!-- WhatsApp Button -->
-    <a class="btn" href="https://wa.me/919XXXXXXXXX">Message on WhatsApp</a>
+  <!-- CONTACT -->
+  <div class="card">
+    <h2>📞 Order Now</h2>
+    <a class="btn" href="https://wa.me/919876543210" target="_blank">
+      WhatsApp Order
+    </a>
   </div>
 
-</section>
+</div>
 
 </body>
 </html>
