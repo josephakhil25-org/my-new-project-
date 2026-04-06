@@ -1,137 +1,223 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Landmark Family Restaurant Menu</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <title>📍 Landmark Family Restaurant Menu</title>
+
+  <!-- 🔥 Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #141e30, #243b55);
-      color: white;
+      font-family: 'Raleway', sans-serif;
+      background: radial-gradient(circle at top left, #0b0b0b, #1a1a1a);
+      color: #fff;
     }
+
     header {
       text-align: center;
-      padding: 20px;
-      font-size: 42px;
+      padding: 40px 20px;
+      font-size: 52px;
       font-family: 'Playfair Display', serif;
-      background: linear-gradient(45deg, #ff4d4d, #ffd369);
+      background: linear-gradient(90deg, #d4af37, #ffd700);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
     }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: rgba(255, 215, 0, 0.2);
+      transform: scale(1.05);
+    }
+
     .section {
-      padding: 20px;
+      padding: 40px 20px;
     }
+
     .title {
-      font-size: 26px;
-      margin-bottom: 15px;
-      border-left: 5px solid #ff4d4d;
-      padding-left: 10px;
+      font-size: 28px;
+      margin-bottom: 25px;
+      border-left: 6px solid #d4af37;
+      padding-left: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ffd700;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     }
+
     .container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
+
     .card {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border-radius: 25px;
+      padding: 20px;
       text-align: center;
+      transition: all 0.5s ease;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+      border: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .card:hover {
+      transform: translateY(-12px) scale(1.07);
+      box-shadow: 0 18px 50px rgba(255, 215, 0, 0.5);
+      border-color: rgba(255, 215, 0, 0.6);
+    }
+
+    h3 {
+      margin: 15px 0 8px;
+      font-size: 22px;
+      color: #ffd700;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #f5f5f5;
+      opacity: 0.85;
+    }
+
+    .price {
+      margin: 12px 0;
+      font-weight: 700;
+      color: #d4af37;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      background: linear-gradient(135deg, #d4af37, #ffd700);
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      font-size: 15px;
       transition: 0.3s;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
-    .card:hover {
-      transform: scale(1.07);
-    }
-    img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-    h3 {
-      margin: 12px 0 5px;
-      font-size: 20px;
-    }
-    .desc {
-      font-size: 13px;
-      opacity: 0.85;
-    }
-    .price {
-      margin: 10px 0;
-      font-weight: bold;
-      color: #ffd369;
-      font-size: 16px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 8px 14px;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 14px;
-    }
+
     .btn:hover {
-      background: #1ebc59;
+      background: linear-gradient(135deg, #ffd700, #fff176);
+      transform: scale(1.05);
+      color: #000;
     }
+
     footer {
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       font-size: 14px;
       opacity: 0.7;
+      border-top: 1px solid rgba(255, 215, 0, 0.3);
+    }
+
+    @media (max-width: 480px) {
+      header { font-size: 38px; padding: 25px 10px; }
+      .title { font-size: 22px; }
+      .card h3 { font-size: 18px; }
+      .price { font-size: 16px; }
+      .btn { font-size: 13px; padding: 8px 12px; }
     }
   </style>
 </head>
 <body>
 
-<header>🍽 Landmark Family Restaurant 📍</header>
+<header>📍 Landmark Family Restaurant 🍽</header>
+
+<nav>
+  <a href="#soups">Soups</a>
+  <a href="#nihari">Nihari</a>
+  <a href="#veg-starters">Veg Starters</a>
+  <a href="#nonveg-starters">Non-Veg Starters</a>
+  <a href="#main-course">Main Course</a>
+  <a href="#biryani">Biryani</a>
+  <a href="#mandi">Mandi</a>
+  <a href="#desserts">Desserts</a>
+  <a href="#beverages">Beverages</a>
+</nav>
 
 <!-- SOUPS -->
-<div class="section">
+<div class="section" id="soups">
   <div class="title">🥣 Soups</div>
   <div class="container">
-    <div class="card"><h3>Sweet Corn Soup</h3><p class="price">₹129</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Sweet%20Corn%20Soup">Order Now</a></div>
-    <div class="card"><h3>Hot & Sour Soup</h3><p class="price">₹129</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Hot%20%26%20Sour%20Soup">Order Now</a></div>
-    <div class="card"><h3>Vegetable Clear Soup</h3><p class="price">₹129</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Vegetable%20Clear%20Soup">Order Now</a></div>
-    <div class="card"><h3>Tomato Soup</h3><p class="price">₹129</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Tomato%20Soup">Order Now</a></div>
-    <div class="card"><h3>Veg. Manchow Soup</h3><p class="price">₹129</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Veg.%20Manchow%20Soup">Order Now</a></div>
-    <div class="card"><h3>Lemon Coriander Soup</h3><p class="price">₹129</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Lemon%20Coriander%20Soup">Order Now</a></div>
-    <div class="card"><h3>Chicken Corn Soup</h3><p class="price">₹139</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Chicken%20Corn%20Soup">Order Now</a></div>
-    <div class="card"><h3>Chicken Hot & Sour Soup</h3><p class="price">₹139</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Chicken%20Hot%20%26%20Sour%20Soup">Order Now</a></div>
+    <div class="card"><h3>Sweet Corn Soup</h3><p class="price">₹129</p></div>
+    <div class="card"><h3>Hot & Sour Soup</h3><p class="price">₹129</p></div>
+    <div class="card"><h3>Vegetable Clear Soup</h3><p class="price">₹129</p></div>
+    <div class="card"><h3>Tomato Soup</h3><p class="price">₹129</p></div>
+    <div class="card"><h3>Veg. Manchow Soup</h3><p class="price">₹129</p></div>
+    <div class="card"><h3>Lemon Coriander Soup</h3><p class="price">₹129</p></div>
+    <div class="card"><h3>Chicken Corn Soup</h3><p class="price">₹139</p></div>
+    <div class="card"><h3>Chicken Hot & Sour Soup</h3><p class="price">₹139</p></div>
+    <div class="card"><h3>Chicken Clear Soup</h3><p class="price">₹139</p></div>
+    <div class="card"><h3>Chicken Lemon Coriander Soup</h3><p class="price">₹139</p></div>
+    <div class="card"><h3>Chicken Manchow Soup</h3><p class="price">₹139</p></div>
   </div>
 </div>
 
-<!-- VEG STARTERS -->
-<div class="section">
+<!-- Nihari -->
+<div class="section" id="nihari">
+  <div class="title">🥘 Nihari & Naan</div>
+  <div class="container">
+    <div class="card"><h3>Paya</h3><p class="price">₹160</p></div>
+    <div class="card"><h3>Shorba</h3><p class="price">₹80</p></div>
+    <div class="card"><h3>Naan</h3><p class="price">₹20</p></div>
+  </div>
+</div>
+
+<!-- Veg Starters -->
+<div class="section" id="veg-starters">
   <div class="title">🥗 Veg Starters</div>
   <div class="container">
-    <div class="card"><h3>Veg Manchurian / Chilli</h3><p class="price">₹159</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Veg%20Manchurian">Order Now</a></div>
-    <div class="card"><h3>Crispy Veg</h3><p class="price">₹269</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Crispy%20Veg">Order Now</a></div>
-    <div class="card"><h3>French Fries</h3><p class="price">₹129</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20French%20Fries">Order Now</a></div>
-    <div class="card"><h3>Corn Cheese Ball</h3><p class="price">₹159</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Corn%20Cheese%20Ball">Order Now</a></div>
+    <div class="card"><h3>Veg Manchurian / Chilli</h3><p class="price">₹159</p></div>
+    <div class="card"><h3>Crispy Veg</h3><p class="price">₹269</p></div>
+    <div class="card"><h3>French Fries</h3><p class="price">₹129</p></div>
+    <div class="card"><h3>Corn Cheese Ball</h3><p class="price">₹159</p></div>
+    <div class="card"><h3>Paneer Manchurian / 65 / Chilli</h3><p class="price">₹179</p></div>
+    <div class="card"><h3>Schezwan / Majestic Paneer</h3><p class="price">₹279</p></div>
+    <div class="card"><h3>Gobi Manchurian / 65 / Chilli</h3><p class="price">₹159</p></div>
+    <div class="card"><h3>Babycorn Manchurian / Chilli</h3><p class="price">₹159</p></div>
+    <div class="card"><h3>Crispy / Salt and Pepper</h3><p class="price">₹269</p></div>
+    <div class="card"><h3>Mushroom Manchurian / 65 / Chilli / Pepper</h3><p class="price">₹179</p></div>
   </div>
 </div>
 
-<!-- NON-VEG STARTERS -->
-<div class="section">
+<!-- Non-Veg Starters -->
+<div class="section" id="nonveg-starters">
   <div class="title">🍗 Non-Veg Starters</div>
   <div class="container">
-    <div class="card"><h3>Chicken Fry / Chicken Roast / Drumstick / Lollipop</h3><p class="price">₹209</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Chicken%20Starters">Order Now</a></div>
-    <div class="card"><h3>Chicken Boneless Starters</h3><p class="price">₹229</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Chicken%20Boneless%20Starters">Order Now</a></div>
-    <div class="card"><h3>Mutton Starters</h3><p class="price">₹469</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Mutton%20Starters">Order Now</a></div>
-    <div class="card"><h3>Fish Starters</h3><p class="price">₹389</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Fish%20Starters">Order Now</a></div>
-    <div class="card"><h3>Prawns Starters</h3><p class="price">₹389</p><a class="btn" href="https://wa.me/919XXXXXXXXX?text=I%20want%20to%20order%20Prawns%20Starters">Order Now</a></div>
+    <div class="card"><h3>Egg Starters Manchurian / 65 / Chilli</h3><p class="price">₹209</p></div>
+    <div class="card"><h3>Boiled Egg 2 Pc</h3><p class="price">₹30</p></div>
+    <div class="card"><h3>Chicken Starters (With Bone)</h3><p class="price">₹209</p></div>
+    <div class="card"><h3>Chicken Starters (Boneless)</h3><p class="price">₹229</p></div>
+    <div class="card"><h3>Majestic / Salt & Pepper / Apollo / Crunchy / Crispy</h3><p class="price">₹369</p></div>
+    <div class="card"><h3>Mutton Starters</h3><p class="price">₹469</p></div>
+    <div class="card"><h3>Fish Starters</h3><p class="price">₹389</p></div>
+    <div class="card"><h3>Prawns Starters</h3><p class="price">₹389</p></div>
   </div>
 </div>
 
-<!-- Repeat same structure for Mains, Biryani, Mandi, Chinese, Desserts, Beverages -->
-
-<footer>🔥 Designed by you bro | Next Level Menu UI</footer>
+<footer>🔥 Crafted with ❤️ | Landmark Family Restaurant</footer>
 
 </body>
 </html>
