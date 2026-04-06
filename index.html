@@ -1,93 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Landmark Restaurant Menu</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landmark Family Restaurant - Menu</title>
 
-  <!-- 🔥 Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
 
   <style>
-    body {
+    :root {
+      --bg-dark: #141e30;
+      --bg-darker: #243b55;
+      --accent: #ff4d4d;
+      --accent-light: #ffd369;
+      --card-bg: rgba(255, 255, 255, 0.1);
+      --text-light: #f8f8f8;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #141e30, #243b55);
-      color: white;
+      background: linear-gradient(to right, var(--bg-dark), var(--bg-darker));
+      color: var(--text-light);
+      line-height: 1.5;
     }
 
     header {
       text-align: center;
       padding: 20px;
-      font-size: 42px;
+      font-size: 2.8rem;
       font-family: 'Playfair Display', serif;
-      background: linear-gradient(45deg, #ff4d4d, #ffd369);
+      background: linear-gradient(45deg, var(--accent), var(--accent-light));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: 2px;
     }
 
-    .section {
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 20px;
     }
 
-    .title {
-      font-size: 26px;
-      margin-bottom: 15px;
-      border-left: 5px solid #ff4d4d;
-      padding-left: 10px;
+    .section {
+      margin-bottom: 30px;
     }
 
-    .container {
+    .title {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      border-left: 5px solid var(--accent);
+      padding-left: 10px;
+      display: inline-block;
+    }
+
+    .menu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
     .card {
-      background: rgba(255,255,255,0.1);
+      background: var(--card-bg);
       backdrop-filter: blur(10px);
       border-radius: 15px;
       padding: 15px;
       text-align: center;
-      transition: 0.3s;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: var(--shadow);
     }
 
     .card:hover {
-      transform: scale(1.07);
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
 
-    img {
+    .card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
       border-radius: 12px;
+      margin-bottom: 10px;
     }
 
-    h3 {
-      margin: 12px 0 5px;
-      font-size: 20px;
+    .card h3 {
+      margin: 0 0 5px;
+      font-size: 1.2rem;
     }
 
-    .desc {
-      font-size: 13px;
+    .card .desc {
+      font-size: 0.85rem;
       opacity: 0.85;
     }
 
-    .price {
+    .card .price {
       margin: 10px 0;
-      font-weight: bold;
-      color: #ffd369;
-      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent-light);
+      font-size: 1rem;
     }
 
     .btn {
       display: inline-block;
-      padding: 8px 14px;
+      padding: 8px 16px;
       background: #25D366;
       color: white;
       text-decoration: none;
       border-radius: 6px;
-      font-size: 14px;
+      font-size: 0.875rem;
+      transition: background 0.2s ease;
     }
 
     .btn:hover {
@@ -96,8 +125,8 @@
 
     footer {
       text-align: center;
-      padding: 15px;
-      font-size: 14px;
+      padding: 20px;
+      font-size: 0.875rem;
       opacity: 0.7;
     }
   </style>
@@ -107,95 +136,99 @@
 
 <header>🍽 Landmark Family Restaurant</header>
 
-<!-- 🍛 BIRYANI -->
-<div class="section">
-  <div class="title">🍛 Biryani</div>
-  <div class="container">
+<main>
+  <!-- 🍛 BIRYANI -->
+  <section class="section">
+    <div class="title">🍛 Biryani</div>
+    <div class="menu-grid">
 
-    <div class="card">
-      <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg">
-      <h3>Chicken Biryani</h3>
-      <p class="desc">Spicy Hyderabadi dum biryani</p>
-      <p class="price">Starts with ₹309</p>
-      <a class="btn" href="#">Order Now</a>
+      <div class="card">
+        <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg" alt="Chicken Biryani" />
+        <h3>Chicken Biryani</h3>
+        <p class="desc">Spicy Hyderabadi dum biryani</p>
+        <p class="price">₹309 onwards</p>
+        <a class="btn" href="tel:+91XXXXXXXXXX">Order Now</a>
+      </div>
+
+      <div class="card">
+        <img src="https://delishglobe.com/wp-content/uploads/2024/10/Mutton-Biryani.png" alt="Mutton Biryani" />
+        <h3>Mutton Biryani</h3>
+        <p class="desc">Rich & flavorful with tender meat</p>
+        <p class="price">₹349 onwards</p>
+        <a class="btn" href="tel:+91XXXXXXXXXX">Order Now</a>
+      </div>
+
+      <div class="card">
+        <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/12/Prawn-Biryani-Recipe.jpg" alt="Prawns Biryani" />
+        <h3>Prawns Biryani</h3>
+        <p class="desc">Seafood special delight</p>
+        <p class="price">₹379 onwards</p>
+        <a class="btn" href="tel:+91XXXXXXXXXX">Order Now</a>
+      </div>
+
     </div>
+  </section>
 
-    <div class="card">
-      <img src="https://delishglobe.com/wp-content/uploads/2024/10/Mutton-Biryani.png">
-      <h3>Mutton Biryani</h3>
-      <p class="desc">Rich & flavorful with tender meat</p>
-      <p class="price">Starts with ₹349</p>
-      <a class="btn" href="#">Order Now</a>
+  <!-- 🍗 MANDI -->
+  <section class="section">
+    <div class="title">🍗 Mandi</div>
+    <div class="menu-grid">
+
+      <div class="card">
+        <img src="https://hinzcooking.com/wp-content/uploads/2021/06/chicken-mandi.jpg" alt="Chicken Mandi" />
+        <h3>Chicken Mandi</h3>
+        <p class="desc">Juicy chicken with Arabian rice</p>
+        <p class="price">₹269 onwards</p>
+        <a class="btn" href="tel:+91XXXXXXXXXX">Order Now</a>
+      </div>
+
+      <div class="card">
+        <img src="https://i.ytimg.com/vi/1LphoJ8Zx6U/hq720.jpg" alt="Mutton Mandi" />
+        <h3>Mutton Mandi</h3>
+        <p class="desc">Authentic mandi experience</p>
+        <p class="price">₹289 onwards</p>
+        <a class="btn" href="tel:+91XXXXXXXXXX">Order Now</a>
+      </div>
+
     </div>
+  </section>
 
-    <div class="card">
-      <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/12/Prawn-Biryani-Recipe.jpg">
-      <h3>Prawns Biryani</h3>
-      <p class="desc">Seafood special delight</p>
-      <p class="price">Starts with ₹379</p>
-      <a class="btn" href="#">Order Now</a>
+  <!-- 🍢 STARTERS -->
+  <section class="section">
+    <div class="title">🍢 Starters</div>
+    <div class="menu-grid">
+
+      <div class="card">
+        <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/03/chicken-65-restaurant-style-500x500.jpg" alt="Chicken 65" />
+        <h3>Chicken 65</h3>
+        <p class="desc">Crispy spicy fried chicken</p>
+        <p class="price">₹298 onwards</p>
+        <a class="btn" href="tel:+91XXXXXXXXXX">Order Now</a>
+      </div>
+
+      <div class="card">
+        <img src="https://static.toiimg.com/thumb/74654861.cms?width=573&height=430" alt="Butter Chicken" />
+        <h3>Butter Chicken</h3>
+        <p class="desc">Creamy rich gravy dish</p>
+        <p class="price">₹249 onwards</p>
+        <a class="btn" href="tel:+91XXXXXXXXXX">Order Now</a>
+      </div>
+
+      <div class="card">
+        <img src="https://deccanbawarchi.com/wp-content/uploads/2023/07/PANEER-MANCHURIAN-scaled.jpg" alt="Paneer Manchurian" />
+        <h3>Paneer Manchurian</h3>
+        <p class="desc">Indo-Chinese spicy paneer</p>
+        <p class="price">₹233 onwards</p>
+        <a class="btn" href="tel:+91XXXXXXXXXX">Order Now</a>
+      </div>
+
     </div>
+  </section>
+</main>
 
-  </div>
-</div>
-
-<!-- 🍗 MANDI -->
-<div class="section">
-  <div class="title">🍗 Mandi</div>
-  <div class="container">
-
-    <div class="card">
-      <img src="https://hinzcooking.com/wp-content/uploads/2021/06/chicken-mandi.jpg">
-      <h3>Chicken Mandi</h3>
-      <p class="desc">Juicy chicken with Arabian rice</p>
-      <p class="price">Starts with ₹269</p>
-      <a class="btn" href="#">Order Now</a>
-    </div>
-
-    <div class="card">
-      <img src="https://i.ytimg.com/vi/1LphoJ8Zx6U/hq720.jpg">
-      <h3>Mutton Mandi</h3>
-      <p class="desc">Authentic mandi experience</p>
-      <p class="price">Starts with ₹289</p>
-      <a class="btn" href="#">Order Now</a>
-    </div>
-
-  </div>
-</div>
-
-<!-- 🍢 STARTERS -->
-<div class="section">
-  <div class="title">🍢 Starters</div>
-  <div class="container">
-
-    <div class="card">
-      <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/03/chicken-65-restaurant-style-500x500.jpg">
-      <h3>Chicken 65</h3>
-      <p class="desc">Crispy spicy fried chicken</p>
-      <p class="price">Starts with ₹298</p>
-      <a class="btn" href="#">Order Now</a>
-    </div>
-
-    <div class="card">
-      <img src="https://static.toiimg.com/thumb/74654861.cms?width=573&height=430">
-      <h3>Butter Chicken</h3>
-      <p class="desc">Creamy rich gravy dish</p>
-      <p class="price">Starts with ₹249</p>
-      <a class="btn" href="#">Order Now</a>
-    </div>
-
-    <div class="card">
-      <img src="https://deccanbawarchi.com/wp-content/uploads/2023/07/PANEER-MANCHURIAN-scaled.jpg">
-      <h3>Paneer Manchurian</h3>
-      <p class="desc">Indo-Chinese spicy paneer</p>
-      <p class="price">Starts with ₹233</p>
-      <a class="btn" href="#">Order Now</a>
-    </div>
-
-  </div>
-</div>
-
-<footer>🔥 Designed by you bro | Next Level Menu UI</footer>
+<footer>
+  🔥 Designed by you bro | Next‑level responsive menu UI
+</footer>
 
 </body>
 </html>
