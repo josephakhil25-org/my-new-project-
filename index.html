@@ -2,54 +2,154 @@
 <html>
 <head>
   <title>Food Menu</title>
+
   <style>
     body {
+      margin: 0;
       font-family: Arial;
-      background: #111;
+      background: #0f0f0f;
       color: white;
-      text-align: center;
     }
+
+    header {
+      background: #ff3d00;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
     .card {
       background: #1e1e1e;
-      margin: 20px auto;
-      padding: 15px;
-      width: 300px;
+      margin: 15px;
+      width: 280px;
       border-radius: 15px;
-      box-shadow: 0 0 10px #000;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.3s;
     }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
     img {
       width: 100%;
-      border-radius: 10px;
+      height: 200px;
+      object-fit: cover;
     }
-    h2 {
+
+    .title {
+      padding: 10px;
+      font-size: 18px;
       color: #ffcc00;
     }
+
+    /* DETAILS PAGE */
+    .details {
+      display: none;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .details img {
+      width: 90%;
+      border-radius: 15px;
+      margin-top: 10px;
+    }
+
+    .back {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff3d00;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
   </style>
+
 </head>
 
 <body>
 
-<h1>🔥 Food Menu 🔥</h1>
+<header>🔥 Landmark Style Menu 🔥</header>
 
-<div class="card">
-  <h2>Chicken Mandi</h2>
+<!-- MAIN PAGE -->
+<div id="main" class="container">
+
+  <div class="card" onclick="openPage('chickenMandi')">
+    <img src="https://images.unsplash.com/photo-1604908176997-431c8c7b1e56">
+    <div class="title">Chicken Mandi</div>
+  </div>
+
+  <div class="card" onclick="openPage('muttonMandi')">
+    <img src="https://images.unsplash.com/photo-1625944525903-7c4b4b06c6f3">
+    <div class="title">Mutton Mandi</div>
+  </div>
+
+  <div class="card" onclick="openPage('chicken65')">
+    <img src="https://images.unsplash.com/photo-1625944231341-0e0a8a5e50d1">
+    <div class="title">Chicken 65</div>
+  </div>
+
+  <div class="card" onclick="openPage('paneer')">
+    <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7">
+    <div class="title">Paneer Manchurian</div>
+  </div>
+
+</div>
+
+<!-- DETAILS PAGES -->
+
+<div id="chickenMandi" class="details">
+  <h2>Chicken Mandi 🍗</h2>
   <img src="https://images.unsplash.com/photo-1604908176997-431c8c7b1e56">
+  <p>Juicy chicken with flavorful mandi rice. Perfect for 2-4 people.</p>
+  <button class="back" onclick="goBack()">⬅ Back</button>
 </div>
 
-<div class="card">
-  <h2>Mutton Mandi</h2>
+<div id="muttonMandi" class="details">
+  <h2>Mutton Mandi 🥩</h2>
   <img src="https://images.unsplash.com/photo-1625944525903-7c4b4b06c6f3">
+  <p>Soft mutton cooked with aromatic spices and mandi rice.</p>
+  <button class="back" onclick="goBack()">⬅ Back</button>
 </div>
 
-<div class="card">
-  <h2>Chicken 65</h2>
+<div id="chicken65" class="details">
+  <h2>Chicken 65 🍗🔥</h2>
   <img src="https://images.unsplash.com/photo-1625944231341-0e0a8a5e50d1">
+  <p>Spicy crispy chicken starter loved by everyone.</p>
+  <button class="back" onclick="goBack()">⬅ Back</button>
 </div>
 
-<div class="card">
-  <h2>Paneer Manchurian</h2>
+<div id="paneer" class="details">
+  <h2>Paneer Manchurian 🧀</h2>
   <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7">
+  <p>Delicious Indo-Chinese paneer dish with rich flavors.</p>
+  <button class="back" onclick="goBack()">⬅ Back</button>
 </div>
+
+<script>
+  function openPage(id) {
+    document.getElementById("main").style.display = "none";
+    document.querySelectorAll(".details").forEach(div => div.style.display = "none");
+    document.getElementById(id).style.display = "block";
+  }
+
+  function goBack() {
+    document.getElementById("main").style.display = "flex";
+    document.querySelectorAll(".details").forEach(div => div.style.display = "none");
+  }
+</script>
 
 </body>
 </html>
